@@ -29,6 +29,9 @@ public class SpringBootDevOpsIntegrationApplication {
 
 
 	public static void main(String[] args) {
+
+		logger.info("Application is starting...");
+		System.out.println("Application is starting...");
 		SpringApplication.run(SpringBootDevOpsIntegrationApplication.class, args);
 	}
 
