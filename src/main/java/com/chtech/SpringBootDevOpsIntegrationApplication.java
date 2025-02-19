@@ -14,7 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class SpringBootDevOpsIntegrationApplication {
 
 	public static Logger logger = 	LoggerFactory.getLogger(SpringBootDevOpsIntegrationApplication.class);
-	
+	@PostConstruct
+	public void init(){
+		System.out.println("Welome to SpringbootDevopsIntegration  Application!");
+		logger.info("SpringbootDevopsIntegration Application started.....");
+	}
 	@GetMapping("/get")
 	
 	public String getMessage() {
@@ -22,11 +26,7 @@ public class SpringBootDevOpsIntegrationApplication {
 		return "Hello, Welcome to the spring";
 	}
 
-	@PostConstruct
-	public void init(){
-		System.out.println("Welome to SpringbootDevopsIntegration  Application!");
-		logger.info("SpringbootDevopsIntegration Application started.....");
-	}
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootDevOpsIntegrationApplication.class, args);
