@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class SpringBootDevOpsIntegrationApplications {
+public class SpringBootDevOpsIntegrationApplication {
 
 	public static Logger logger = 	LoggerFactory.getLogger(SpringBootDevOpsIntegrationApplication.class);
 	@PostConstruct
