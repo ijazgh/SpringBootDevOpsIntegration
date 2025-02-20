@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SpringBootDevOpsIntegrationApplication {
 
 	public static Logger logger = 	LoggerFactory.getLogger(SpringBootDevOpsIntegrationApplication.class);
-	
+
 	@GetMapping("/get")
 	
 	public String getMessage() {
