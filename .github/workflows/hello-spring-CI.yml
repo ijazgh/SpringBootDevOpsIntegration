@@ -3,9 +3,9 @@ name: Hello Spring Boot App to Docker
 on:
   workflow_dispatch:
   push:
-    # branches:
-    #     - master
-    paths:
+     #branches:
+     #    - main
+     paths:
         - "/SpringBootDevOpsIntegration"
 
 jobs:
@@ -62,8 +62,9 @@ jobs:
                 context: .
                 file: Dockerfile
                 push: true
-                tags: |
-                    ${{ secrets.DOCKER_USERNAME }}/hello-spring:latest   
-                    ${{ secrets.DOCKER_USERNAME }}/hello-spring:${{ github.sha }}    
-                    ${{ secrets.DOCKER_USERNAME }}/hello-spring:${{ github.ref_name }}    
-                    
+                tags: ${{ secrets.DOCKER_USERNAME }}/hello-spring:latest
+          # SHA and branch tags disabled
+               # Disabled SHA tag
+          # ${{ secrets.DOCKER_USERNAME }}/hello-spring:${{ github.sha }}
+          # Disabled branch tag
+          # ${{ secrets.DOCKER_USERNAME }}/hello-spring:${{ github.ref_name }}
