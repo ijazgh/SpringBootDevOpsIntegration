@@ -23,7 +23,7 @@ jobs:
                 java-version: '17'
 
           - name: Build and Test (Maven)
-            working-directory: /SpringBootDevOpsIntegration
+            working-directory: SpringBootDevOpsIntegration
             run: mvn -B clean verify
 
           - name: Upload Test Reports
@@ -47,7 +47,7 @@ jobs:
                 java-version: '17'
 
           - name: Build JAR for Docker
-            working-directory: /SpringBootDevOpsIntegration
+            working-directory: SpringBootDevOpsIntegration
             run: mvn -B clean package -DskipTests
 
           - name: Login to DockerHub
