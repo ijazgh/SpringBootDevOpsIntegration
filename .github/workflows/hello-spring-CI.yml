@@ -23,14 +23,14 @@ jobs:
                 java-version: '17'
 
           - name: Build and Test (Maven)
-            working-directory: SpringBootDevOpsIntegration
+            working-directory: 
             run: mvn -B clean verify
 
           - name: Upload Test Reports
             uses: actions/upload-artifact@v4
             with:
                 name: test-reports
-                path: SpringBootDevOpsIntegration/target/surefire-reports
+                path: target/surefire-reports
 
     docker-build-push:
         runs-on: ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
                 java-version: '17'
 
           - name: Build JAR for Docker
-            working-directory: SpringBootDevOpsIntegration
+            working-directory: 
             run: mvn -B clean package -DskipTests
 
           - name: Login to DockerHub
@@ -59,10 +59,11 @@ jobs:
           - name: Build and Push Docker Image
             uses: docker/build-push-action@v6
             with:
-                context: /SpringBootDevOpsIntegration
-                file: SpringBootDevOpsIntegration/Dockerfile
+                context: .
+                file: Dockerfile
                 push: true
                 tags: |
                     ${{ secrets.DOCKER_USERNAME }}/hello-spring:latest   
                     ${{ secrets.DOCKER_USERNAME }}/hello-spring:${{ github.sha }}    
                     ${{ secrets.DOCKER_USERNAME }}/hello-spring:${{ github.ref_name }}    
+                    
