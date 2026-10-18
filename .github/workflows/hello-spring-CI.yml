@@ -63,7 +63,7 @@ jobs:
                 file: Dockerfile
                 push: true
                 tags: ${{ secrets.DOCKER_USERNAME }}/hello-spring:latest
-          # SHA and branch tags disabled
+          # SHA and branch tags disabled if neede then put a pipe sign in tags: then add following
                # Disabled SHA tag
           # ${{ secrets.DOCKER_USERNAME }}/hello-spring:${{ github.sha }}
           # Disabled branch tag
