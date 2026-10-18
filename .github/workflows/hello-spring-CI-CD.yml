@@ -91,4 +91,4 @@ jobs:
             run: kubectl get nodes
 
           - name: Deploy to AWS (Kubernetes)
-            run: kubectl apply -f k8s/aws/app1-hello
+            run: kubectl apply -f SpringBootDevOpsIntegration/k8app.yaml
