@@ -78,14 +78,14 @@ jobs:
             with:
               aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} # this line need to be updated with your AWS access key ID
               aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # this line need to be updated with your AWS secret access key
-              aws-region: ap-south-1 # this line need to be updated with your AWS region
+              aws-region: us-east-2 # this line need to be updated with your AWS region
 
           - name: Setup kubectl
             uses: azure/setup-kubectl@v4
 
           - name: Update kubeconfig for EKS
             run: |
-              aws eks update-kubeconfig --name hello-cluster --region ap-south-1 
+              aws eks update-kubeconfig --name hello-cluster --region us-east-2
 # this above line need to be updated with your EKS cluster name and region
           - name: Verify connection
             run: kubectl get nodes
