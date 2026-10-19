@@ -88,7 +88,7 @@ jobs:
               aws eks update-kubeconfig --name hello-cluster --region us-east-2
 # this above line need to be updated with your EKS cluster name and region
           - name: Verify connection
-            run: kubectl get nodes
+            run: kubectl get deployments -n default
 
           - name: Deploy to AWS (Kubernetes)
             run: kubectl apply -f SpringBootDevOpsIntegration/k8app.yaml
