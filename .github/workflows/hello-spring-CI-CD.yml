@@ -91,4 +91,4 @@ jobs:
             run: kubectl get deployments -n default
 
           - name: Deploy to AWS (Kubernetes)
-            run: kubectl apply -f SpringBootDevOpsIntegration/k8app.yaml
+            run: kubectl apply -f k8app.yaml -n default
